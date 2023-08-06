@@ -2,6 +2,13 @@
 name = "showie"
 version = "0.1.0"
 edition = "2021"
+author = "talwat"
+license-file = "LICENSE"
+description = "A super simple rust crate to display images to the terminal."
+documentation = "https://github.com/talwat/showie"
+homepage = "https://github.com/talwat/showie"
+repository = "https://github.com/talwat/showie"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
