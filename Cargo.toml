@@ -1,8 +1,8 @@
 [package]
 name = "showie"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
-author = "talwat"
+authors = [ "talwat" ]
 license-file = "LICENSE"
 description = "A super simple rust crate to display images to the terminal."
 documentation = "https://github.com/talwat/showie"
