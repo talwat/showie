@@ -1,9 +1,11 @@
 use image::{DynamicImage, GenericImageView};
 
+/// Converts rgb into an ANSI color code.
 fn get_ansi(r: u8, g: u8, b: u8, bg: bool) -> String {
     return format!("\x1b[{};2;{};{};{}m", if bg { "48" } else { "38" }, r, g, b);
 }
 
+/// Remove whitespace from an image, useful to make sure the image fits.
 pub fn trim(img: &DynamicImage) -> DynamicImage {
     // Get the dimensions of the image
     let (width, height) = img.dimensions();
@@ -41,7 +43,9 @@ pub fn trim(img: &DynamicImage) -> DynamicImage {
 }
 
 
-// Max image size on standard sized terminal: 80x96
+/// Does the actual conversion to ASCII text.
+/// This uses the `▀` and `▄` characters and requires fullcolor.
+/// Max image size on standard sized terminal is 80x96.
 pub fn to_ascii(img: &DynamicImage) -> String {
     let mut out = String::new();
 
