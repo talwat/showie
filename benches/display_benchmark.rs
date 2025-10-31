@@ -1,9 +1,8 @@
 use criterion::{criterion_group, criterion_main, Bencher, Criterion};
-use image::io::Reader as ImageReader;
 use showie::{render, Trim};
 
 fn display_benchmark(c: &mut Criterion) {
-    let img = ImageReader::open("tests/very_big.png")
+    let img = image::ImageReader::open("tests/very_big.png")
         .unwrap()
         .decode()
         .unwrap()

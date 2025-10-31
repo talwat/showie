@@ -1,8 +1,6 @@
 use showie::{render, Trim};
 use std::{env, io, process::exit};
 
-use image::io::Reader as ImageReader;
-
 fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() <= 1 {
@@ -11,7 +9,7 @@ fn main() {
     }
 
     let path = &args[1];
-    let img = match ImageReader::open(path) {
+    let img = match image::ImageReader::open(path) {
         Ok(file) => file.decode().unwrap(),
         Err(err) => match err.kind() {
             io::ErrorKind::NotFound => {
